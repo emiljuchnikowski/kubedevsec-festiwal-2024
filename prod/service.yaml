@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: http-service
+spec:
+  selector:
+    name: deploy-app
+  type: NodePort
+  ports:
+    - port: 9000
+      protocol: TCP
+      targetPort: 80

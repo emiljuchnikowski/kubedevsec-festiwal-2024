@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-main
+spec:
+  selector:
+    matchLabels:
+      name: deploy-app
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name: deploy-app
+    spec:
+      containers:
+        - name: drupal
+          image: smartsoft001/drupal:10.1.5
+          ports:
+            - containerPort: 80
