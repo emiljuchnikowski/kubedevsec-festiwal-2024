@@ -15,7 +15,7 @@ spec:
         name: deploy-app
     spec:
       containers:
-        - name: drupal
-          image: smartsoft001/drupal:10.1.5
+        - name: app
+          image: nginx:1.23
           ports:
             - containerPort: 80
